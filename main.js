@@ -1,10 +1,12 @@
+function renderForID(id) {
     var params = {
-        container: document.getElementById('squiggle'),
+        container: document.getElementById(id),
         renderer: 'html',
         loop: false,
         autoplay: true,
         animationData: getAnimationData(),
     };
-    const runAnimation = () => lottie.loadAnimation(params);
-    runAnimation();
-    setTimeout(runAnimation, 4500);
+    lottie.loadAnimation(params);
+}
+renderForID('squiggle');
+renderForID('squiggle2');
