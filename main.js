@@ -6,7 +6,7 @@ function renderForID(id) {
         autoplay: true,
         animationData: getAnimationData(),
     };
-    lottie.loadAnimation(params);
+    bodymovin.loadAnimation(params);
 };
 
 
@@ -15,14 +15,15 @@ function getID() {
     return i++;
 }
 
+width = 3000;
+
 function getStyle(x, y) {
-  return `left: ${x}px; top: ${y}px;`;
+  return `width: ${width}; left: ${x}px; top: ${y}px;`;
 }
 
 function onClick(event) {
-    width = 200;
     const id = 'squiggle_' + getID();
-    const style = getStyle(event.pageX - width / 2, event.pageY - width / 4);
+    const style = getStyle(event.pageX - width / 2, event.pageY - width / 10);
     const element = `<div class="squiggle" id="${id}" style="${style}" />`; 
     $('body').append(element);
     renderForID(id);
